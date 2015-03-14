@@ -1,0 +1,19 @@
+{
+  "name": "express-gulp",
+  "version": "0.0.0",
+  "authors": [
+    "nealfennimore <hi@neal.codes>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.1"
+  }
+}
