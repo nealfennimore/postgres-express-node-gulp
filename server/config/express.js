@@ -5,7 +5,7 @@
 'use strict';
 
 var express = require('express');
-var config = require('./environment');
+var config = require('./');
 var path = require('path');
 var handlerbars = require('express-handlebars');
 var morgan = require('morgan');
@@ -23,6 +23,7 @@ var pgSession = require('connect-pg-simple')(session);
 
 module.exports = function(app) {
   var env = app.get('env');
+  var db_uri = config.dialect + '://' + config.username + ':' + config.password + '@localhost/' + config.database;
 
   app.use(express.static(config.root + '/client'));
   app.use(compression());
@@ -34,7 +35,7 @@ module.exports = function(app) {
 
   app.use(session({
     store: new pgSession({
-      conString: config.pg.uri,
+      conString: db_uri,
       tableName: 'session'
     }),
     secret: config.secrets.session,
