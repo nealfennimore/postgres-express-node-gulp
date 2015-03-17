@@ -8,21 +8,10 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var express = require('express');
-var Sequelize = require('sequelize');
-var config = require('./config/environment');
+var config = require('./config');
 var chalk = require('chalk');
 
-// Connect to database
-var sequelize = new Sequelize(config.pg.uri)
-// Test database connection
-sequelize.authenticate()
-         .complete(function(err) {
-          if (!!err) {
-            console.log(chalk.bold.red('Unable to connect to the database:'), err);
-          } else {
-            console.log(chalk.bold.green('DB connection has been established successfully.'));
-          }
-        });
+var models = require('./models');
 
 // Populate DB with sample data
 // if(config.seedDB) { require('./config/seed'); }
@@ -31,7 +20,6 @@ sequelize.authenticate()
 var app = express();
 require('./config/express')(app);
 require('./routes')(app);
-// require('./models')(sequelize, Sequelize);
 
 app.listen(config.port, config.ip, function () {
   console.log(
