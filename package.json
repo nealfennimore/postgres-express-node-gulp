@@ -32,14 +32,14 @@
     "express-handlebars": "^1.2.2",
     "express-session": "^1.10.3",
     "jsonwebtoken": "^4.1.0",
-    "lodash": "^3.5.0",
+    "lodash": "^4.17.5",
     "method-override": "^2.3.1",
     "morgan": "^1.5.1",
     "passport": "^0.2.1",
     "pg": "^4.3.0",
     "pg-hstore": "^2.3.1",
-    "sequelize": "^2.0.4",
-    "sequelize-cli": "^1.4.0",
+    "sequelize": "^3.19.0",
+    "sequelize-cli": "^3.0.0",
     "serve-favicon": "^2.2.0"
   }
 }
