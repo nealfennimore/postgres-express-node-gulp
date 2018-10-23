@@ -4,7 +4,9 @@
   "description": "Postgres and express server node framework - foundation and handlebars templating, all using Gulp.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "Neal Fennimore",
   "license": "ISC",
@@ -39,7 +41,9 @@
     "pg": "^4.3.0",
     "pg-hstore": "^2.3.1",
     "sequelize": "^2.0.4",
-    "sequelize-cli": "^1.4.0",
-    "serve-favicon": "^2.2.0"
-  }
+    "sequelize-cli": "^3.0.0",
+    "serve-favicon": "^2.2.0",
+    "snyk": "^1.104.2"
+  },
+  "snyk": true
 }
